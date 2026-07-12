@@ -231,11 +231,11 @@ $settings = getPrintSettings();
                 <div class="settings-section" style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #e2e8f0; display: flex; flex-wrap: wrap; gap: 20px;">
                     <div style="flex: 1; min-width: 180px;">
                         <label for="line_spacing" style="margin-top: 0; color: #475569; font-size: 13px; font-weight: bold;">Line Spacing (Vertical): <span id="line_spacing_val"><?php echo htmlspecialchars($settings['line_spacing']); ?></span>px</label>
-                        <input type="range" id="line_spacing" name="line_spacing" min="0" max="20" value="<?php echo htmlspecialchars($settings['line_spacing']); ?>" oninput="updateSpacingVal('line_spacing')" style="width: 100%;">
+                        <input type="range" id="line_spacing" name="line_spacing" min="-20" max="20" value="<?php echo htmlspecialchars($settings['line_spacing']); ?>" oninput="updateSpacingVal('line_spacing')" style="width: 100%;">
                     </div>
                     <div style="flex: 1; min-width: 180px;">
                         <label for="field_spacing" style="margin-top: 0; color: #475569; font-size: 13px; font-weight: bold;">Column Spacing (Horizontal): <span id="field_spacing_val"><?php echo htmlspecialchars($settings['field_spacing']); ?></span>px</label>
-                        <input type="range" id="field_spacing" name="field_spacing" min="0" max="30" value="<?php echo htmlspecialchars($settings['field_spacing']); ?>" oninput="updateSpacingVal('field_spacing')" style="width: 100%;">
+                        <input type="range" id="field_spacing" name="field_spacing" min="-30" max="30" value="<?php echo htmlspecialchars($settings['field_spacing']); ?>" oninput="updateSpacingVal('field_spacing')" style="width: 100%;">
                     </div>
                     <div style="flex: 1; min-width: 180px;">
                         <label for="receipt_width" style="margin-top: 0; color: #475569; font-size: 13px; font-weight: bold;">Receipt Width: <span id="receipt_width_val"><?php echo htmlspecialchars($settings['receipt_width']); ?></span>px</label>
