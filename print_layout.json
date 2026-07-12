@@ -1,0 +1,97 @@
+[
+    [
+        {
+            "key": "_custom_1",
+            "label": "==========================",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "store_number",
+            "label": "Store No.",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        },
+        {
+            "key": "till_number",
+            "label": "Till No. (Cashier)",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        },
+        {
+            "key": "transaction_number",
+            "label": "Transaction No.",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "_custom_2",
+            "label": "=========================",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "zread_number",
+            "label": "Z-Read No.",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "entry_date",
+            "label": "Date",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "register_number",
+            "label": "Register No.",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "created_at",
+            "label": "Saved On",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ]
+]
