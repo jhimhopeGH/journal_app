@@ -188,9 +188,7 @@ $settings = getPrintSettings();
                                             <span class="field-label"><?php echo htmlspecialchars($field['label']); ?></span>
                                             <input type="hidden" class="field-data" value='<?php echo $jsonVal; ?>'>
                                         <?php endif; ?>
-                                        <?php if (strpos($field['key'], '_custom_') === 0): ?>
-                                            <button type="button" class="remove-field-btn" onclick="removeField(this)" title="Remove">✖</button>
-                                        <?php endif; ?>
+                                        <button type="button" class="remove-field-btn" onclick="removeField(this)" title="Remove">✖</button>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -243,11 +241,34 @@ $settings = getPrintSettings();
                     </div>
                 </div>
                 
-                <div class="layout-actions" style="margin-top: 20px;">
+                <div class="layout-actions" style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
                     <button type="button" class="btn-secondary" onclick="addCustomLine()">+ Add Custom Text</button>
+                    
+                    <div style="display: inline-flex; align-items: center; gap: 6px;">
+                        <select id="db-field-select" style="padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; background: white; height: 36px; box-sizing: border-box;">
+                            <option value="">-- Add Database Field --</option>
+                            <option value="store_number:Store No.">Store No.</option>
+                            <option value="register_number:Register No.">Register No.</option>
+                            <option value="transaction_number:Transaction No.">Transaction No.</option>
+                            <option value="last_trx_number:Last Trx#">Last Trx#</option>
+                            <option value="entry_date:Date">Date</option>
+                            <option value="entry_time:Time">Time</option>
+                            <option value="zread_number:Z-Read No.">Z-Read No.</option>
+                            <option value="till_number:Till No. (Cashier)">Till No. (Cashier)</option>
+                            <option value="tender:Tender">Tender</option>
+                            <option value="total_vat:Total VAT">Total VAT</option>
+                            <option value="total_non_vat:Total Non-VAT">Total Non-VAT</option>
+                            <option value="daily_sales:Daily Sales">Daily Sales</option>
+                            <option value="old_grand_total:Old Grand Total">Old Grand Total</option>
+                            <option value="new_grand_total:New Grand Total">New Grand Total</option>
+                            <option value="created_at:Saved On">Saved On</option>
+                        </select>
+                        <button type="button" class="btn-secondary" onclick="addDbField()" style="height: 36px;">+ Add Field</button>
+                    </div>
+
                     <button type="button" class="btn-secondary" onclick="undoChanges()">Undo</button>
                     <button type="button" class="btn-secondary" onclick="previewLayout()">Preview</button>
-                    <button type="submit" style="margin-top: 20px; font-weight: bold;">Save Print Layout</button>
+                    <button type="submit" style="font-weight: bold; height: 36px;">Save Print Layout</button>
                 </div>
             </form>
      <script>
@@ -401,6 +422,41 @@ function addCustomLine() {
     saveState();
 }
 
+function addDbField() {
+    const select = document.getElementById('db-field-select');
+    if (!select.value) return;
+    const [key, label] = select.value.split(':');
+    
+    const grid = document.getElementById('layout-grid');
+    const newRow = createEmptyRow();
+    const field = document.createElement('div');
+    field.className = 'layout-field';
+    const initialData = {
+        key: key,
+        label: label,
+        flex: 1,
+        align: 'left',
+        margin_left: 0,
+        margin_right: 0,
+        font_size: 13
+    };
+    field.innerHTML = `
+        <span class="field-label">${label}</span>
+        <input type="hidden" class="field-data" value='${JSON.stringify(initialData)}'>
+        <button type="button" class="remove-field-btn" onclick="removeField(this)" title="Remove">✖</button>
+    `;
+    newRow.querySelector('.row-items').appendChild(field);
+    grid.appendChild(newRow);
+    
+    initDragAndDrop(newRow);
+    setupRowDrop(newRow);
+    initDragAndDrop(field);
+    
+    refreshRowLabels();
+    saveState();
+    previewLayout();
+}
+
 // Form submission
 document.getElementById('layout-form').addEventListener('submit', function(e) {
     const data = [];
@@ -516,12 +572,11 @@ function renderLayout(layout) {
             
             field.innerHTML = `
                 ${fieldData.key.startsWith('_custom_') ?
-                    `<input type="text" class="custom-input" value="${fieldData.label}" oninput="updateHidden(this)">` +
-                    `<input type="hidden" class="field-data" value='${jsonVal}'>` +
-                    '<button type="button" class="remove-field-btn" onclick="removeField(this)" title="Remove">✖</button>'
+                    `<input type="text" class="custom-input" value="${fieldData.label}" oninput="updateHidden(this)">`
                     :
-                    `<span class="field-label">${fieldData.label}</span>` +
-                    `<input type="hidden" class="field-data" value='${jsonVal}'>`}
+                    `<span class="field-label">${fieldData.label}</span>`}
+                <input type="hidden" class="field-data" value='${jsonVal}'>
+                <button type="button" class="remove-field-btn" onclick="removeField(this)" title="Remove">✖</button>
             `;
             itemsContainer.appendChild(field);
         });

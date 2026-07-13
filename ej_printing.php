@@ -9,8 +9,16 @@ $to   = isset($_GET['to'])   && $_GET['to']   !== '' ? $_GET['to']   : $today;
 
 $stmt = $pdo->prepare("
     SELECT * FROM entries
-    WHERE entry_date BETWEEN :from AND :to
-    ORDER BY entry_date ASC, id ASC
+    WHERE CASE
+        WHEN entry_date LIKE '__/__/__' THEN
+            substr(entry_date,7,2) || '-' || substr(entry_date,1,2) || '-' || substr(entry_date,4,2)
+        ELSE entry_date
+    END BETWEEN :from AND :to
+    ORDER BY CASE
+        WHEN entry_date LIKE '__/__/__' THEN
+            substr(entry_date,7,2) || '-' || substr(entry_date,1,2) || '-' || substr(entry_date,4,2)
+        ELSE entry_date
+    END ASC, id ASC
 ");
 $stmt->execute([':from' => $from, ':to' => $to]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

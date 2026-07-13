@@ -5,8 +5,10 @@ $currentPage = 'dashboard';
 
 $totalEntries = (int)$pdo->query("SELECT COUNT(*) FROM entries")->fetchColumn();
 
-$todayStmt = $pdo->prepare("SELECT COUNT(*) FROM entries WHERE entry_date = :today");
-$todayStmt->execute([':today' => date('Y-m-d')]);
+$todayYMD  = date('Y-m-d');      // for legacy rows stored as YYYY-MM-DD
+$todayMDY  = date('m/d/y');      // for new rows stored as MM/DD/YY
+$todayStmt = $pdo->prepare("SELECT COUNT(*) FROM entries WHERE entry_date = :ymd OR entry_date = :mdy");
+$todayStmt->execute([':ymd' => $todayYMD, ':mdy' => $todayMDY]);
 $todayCount = (int)$todayStmt->fetchColumn();
 
 $storeCount = (int)$pdo->query("SELECT COUNT(DISTINCT store_number) FROM entries")->fetchColumn();

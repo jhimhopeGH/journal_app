@@ -2,7 +2,29 @@
     [
         {
             "key": "_custom_1",
-            "label": "==========================",
+            "label": "===================================================",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "_custom_2",
+            "label": "Terminal Z Report",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "_custom_3",
+            "label": "===================================================",
             "flex": 1,
             "align": "left",
             "margin_left": 0,
@@ -21,6 +43,7 @@
             "font_size": 13
         },
         {
+<<<<<<< Updated upstream
             "key": "till_number",
             "label": "Till No. (Cashier)",
             "flex": 1,
@@ -72,6 +95,8 @@
     ],
     [
         {
+=======
+>>>>>>> Stashed changes
             "key": "register_number",
             "label": "Register No.",
             "flex": 1,
@@ -83,8 +108,92 @@
     ],
     [
         {
-            "key": "created_at",
-            "label": "Saved On",
+            "key": "last_trx_number",
+            "label": "Last Trx#",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        },
+        {
+            "key": "zread_number",
+            "label": "Z-Read No.",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "total_vat",
+            "label": "Total VAT",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "total_non_vat",
+            "label": "Total Non-VAT",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "daily_sales",
+            "label": "Daily Sales",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "new_grand_total",
+            "label": "New Grand Total",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "old_grand_total",
+            "label": "Old Grand Total",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "entry_date",
+            "label": "Date",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        },
+        {
+            "key": "entry_time",
+            "label": "Time",
             "flex": 1,
             "align": "left",
             "margin_left": 0,

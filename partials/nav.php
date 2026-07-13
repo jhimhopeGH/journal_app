@@ -45,6 +45,15 @@ function navClass($page, $current) {
         <a class="<?php echo navClass('admin', $currentPage); ?> nav-sublink" href="admin.php">
             Database
         </a>
+<<<<<<< Updated upstream
+=======
+        <a class="<?php echo navClass('store_master', $currentPage); ?> nav-sublink" href="store_master.php">
+            Store Master
+        </a>
+        <a class="<?php echo navClass('tender_master', $currentPage); ?> nav-sublink" href="tender_master.php">
+            Tender Master
+        </a>
+>>>>>>> Stashed changes
         <a class="<?php echo navClass('layout', $currentPage); ?> nav-sublink" href="print_layout.php">
             Print Layout
         </a>
