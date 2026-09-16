@@ -1,0 +1,267 @@
+[
+    [
+        {
+            "key": "_custom_1",
+            "label": "=========================================",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "_custom_2",
+            "label": "ELECTRONIC JOURNAL RECEIPT",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "store_code",
+            "label": "Store:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        },
+        {
+            "key": "register_number",
+            "label": "Reg:",
+            "flex": 1,
+            "align": "right",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "invoice_number",
+            "label": "Invoice #:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        },
+        {
+            "key": "transaction_number",
+            "label": "Trx #:",
+            "flex": 1,
+            "align": "right",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "entry_date",
+            "label": "Date:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        },
+        {
+            "key": "entry_time",
+            "label": "Time:",
+            "flex": 1,
+            "align": "right",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "member_number",
+            "label": "Member #:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        },
+        {
+            "key": "customer_name",
+            "label": "Name:",
+            "flex": 1,
+            "align": "right",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "till_number",
+            "label": "Till #:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        },
+        {
+            "key": "sales_associate",
+            "label": "Cashier:",
+            "flex": 1,
+            "align": "right",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "_custom_3",
+            "label": "-----------------------------------------",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "items_list",
+            "label": "Items Breakdown",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "_custom_4",
+            "label": "-----------------------------------------",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "subtotal",
+            "label": "Subtotal:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 5,
+            "margin_right": 7,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "vatable_sales",
+            "label": "VATable Sales:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 5,
+            "margin_right": 7,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "total_vat",
+            "label": "Total VAT:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 5,
+            "margin_right": 7,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "total_non_vat",
+            "label": "Total Non-VAT:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 5,
+            "margin_right": 7,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "total_amount",
+            "label": "TOTAL AMOUNT:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 5,
+            "margin_right": 7,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "_custom_5",
+            "label": "-----------------------------------------",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "tenders_list",
+            "label": "Payment Tender Breakdown",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ],
+    [
+        {
+            "key": "_custom_6",
+            "label": "=========================================",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 13
+        }
+    ],
+    [
+        {
+            "key": "associate_id",
+            "label": "Associate ID:",
+            "flex": 1,
+            "align": "left",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 11
+        }
+    ],
+    [
+        {
+            "key": "_custom_7",
+            "label": "THANK YOU FOR SHOPPING!",
+            "flex": 1,
+            "align": "center",
+            "margin_left": 0,
+            "margin_right": 0,
+            "font_size": 12
+        }
+    ]
+]

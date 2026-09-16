@@ -1,5 +1,7 @@
 <?php
 // tender_master_entry.php - New / Edit tender master entry form
+require_once __DIR__ . '/auth.php';
+requireNavAccess('tender_master');
 require_once __DIR__ . '/db.php';
 $currentPage = 'tender_master';
 

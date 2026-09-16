@@ -61,29 +61,40 @@ body {
 .nav-link {
     color: #a9b1c6;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 14px;
+    padding: 8px 18px;
+    font-size: 13.5px;
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: background 0.15s ease, color 0.15s ease, border-radius 0.15s ease;
+    border-radius: 0 24px 24px 0;
 }
 
 .nav-icon {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
 .nav-link:hover {
-    background: rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.10);
     color: #fff;
+    border-radius: 0 24px 24px 0;
+}
+
+.nav-link:hover .nav-icon {
+    opacity: 1;
 }
 
 .nav-link.active {
     background: #2d6cdf;
     color: #fff;
-    font-weight: bold;
+    font-weight: 600;
+    border-radius: 0 24px 24px 0;
 }
 
 .nav-link.active .nav-icon {
@@ -98,11 +109,11 @@ body {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    padding: 16px 20px 6px;
+    padding: 16px 18px 6px;
 }
 
 .nav-sublink {
-    padding-left: 34px;
+    padding-left: 20px;
 }
 
 .main-content {
@@ -230,13 +241,22 @@ label {
 }
 
 input[type="text"],
-input[type="date"] {
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
     width: 100%;
     padding: 8px 10px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
 }
 
 .hint {
@@ -269,40 +289,101 @@ button, .btn {
     background: #2d6cdf;
     color: #fff;
     border: none;
-    padding: 10px 18px;
-    border-radius: 4px;
+    padding: 9px 20px;
+    border-radius: 20px;
     font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(45, 108, 223, 0.2);
 }
 
 button:hover, .btn:hover {
     background: #1f57bd;
+    box-shadow: 0 4px 14px rgba(45, 108, 223, 0.35);
+    transform: translateY(-1px);
+}
+
+button:active, .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(45, 108, 223, 0.2);
 }
 
 .btn-secondary {
-    background: #6c757d;
+    background: #64748b;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(100, 116, 139, 0.2);
 }
 
 .btn-secondary:hover {
-    background: #565e64;
+    background: #475569;
+    box-shadow: 0 4px 14px rgba(100, 116, 139, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.2);
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-danger:active {
+    transform: translateY(0);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 16px;
+    margin-top: 14px;
     font-size: 13px;
+    background: #ffffff;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    padding: 9px 12px;
     text-align: left;
 }
 
 th {
-    background: #f0f1f3;
+    background: #e2e8f0;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+}
+
+td {
+    color: #1e293b;
+    font-size: 13px;
+}
+
+/* Alternating row colors (white & defined light grey) across all data tables */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+}
+
+tbody tr {
+    transition: background 0.12s ease;
+}
+
+tbody tr:hover {
+    background-color: #dbeafe !important;
 }
 
 .search-bar {
@@ -330,9 +411,13 @@ th {
 .print-sheet {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px dashed #999;
-    font-family: 'Courier New', monospace;
+    padding: 16px 20px;
+    border: 1px dashed #cbd5e1;
+    background: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.25;
+    color: #000;
 }
 
 .print-sheet h2 {
@@ -340,11 +425,18 @@ th {
     margin-bottom: 4px;
 }
 
+.store-header {
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
 .print-row {
     display: flex;
     justify-content: space-between;
     padding: 4px 0;
-    border-bottom: 1px dotted #ccc;
+    line-height: 1.25;
 }
 
 .no-print {
@@ -353,15 +445,33 @@ th {
 }
 
 @media print {
+    @page {
+        margin: 0mm !important;
+        size: auto;
+    }
     .no-print {
-        display: none;
+        display: none !important;
     }
     body {
-        background: #fff;
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
     }
     .print-sheet {
-        border: none;
-        margin: 0;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+    .print-row {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
 }
 
 /* Drag-and-drop Print Layout Customizer (2D Grid) */
@@ -479,4 +589,125 @@ th {
 .layout-actions .btn-secondary {
     margin-top: 0;
 }
+
+/* ---------- Shared Pagination Styles ---------- */
+.page-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.18s;
+}
+.page-nav-btn:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+    color: #0f172a;
+    transform: translateY(-1px);
+}
+.page-nav-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+}
+
+/* ---------- Shared App Modal Styles ---------- */
+.app-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+.app-modal-overlay.active {
+    display: flex;
+}
+.app-modal-box {
+    background: #ffffff;
+    border-radius: 14px;
+    width: 440px;
+    max-width: 92vw;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: appModalFadeIn 0.18s ease-out;
+}
+@keyframes appModalFadeIn {
+    from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.app-modal-header {
+    padding: 14px 20px;
+    background: #0f172a;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.app-modal-header h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+}
+.app-modal-close {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    margin: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: color 0.15s ease;
+}
+.app-modal-close:hover {
+    color: #ffffff;
+    background: none !important;
+    box-shadow: none !important;
+}
+.app-modal-body {
+    padding: 20px 22px;
+}
+
+/* Sidebar Change Password Button */
+.nav-change-pw-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.18s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+}
+.nav-change-pw-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-1px);
+}
+
 

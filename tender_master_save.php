@@ -1,5 +1,7 @@
 <?php
 // tender_master_save.php - Validates and saves a tender master entry to SQLite
+require_once __DIR__ . '/auth.php';
+requireNavAccess('tender_master');
 require_once __DIR__ . '/db.php';
 
 function fieldValue($name) {
@@ -50,9 +52,11 @@ if ($edit_id > 0) {
         ':id'          => $edit_id
     ]);
     $newId = $edit_id;
+    logActivity('edit', 'tender_master', "Updated tender #$edit_id: $tender_code - $tender_name");
 } else {
     // Insert new record
     $newId = saveTenderMaster($data);
+    logActivity('create', 'tender_master', "Created tender #$newId: $tender_code - $tender_name");
 }
 
 header('Location: tender_master.php?saved=' . $newId);

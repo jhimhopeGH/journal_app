@@ -1,0 +1,6 @@
+{
+    "dsn_name": "mms_as400",
+    "username": "maindss",
+    "password": "windss",
+    "library": "MMLTSLIB"
+}

@@ -1,7 +1,9 @@
 <?php
 // zread_reprint.php - Search and reprint entries by Z-Read number
+require_once __DIR__ . '/auth.php';
+requireNavAccess('journal');
 require_once __DIR__ . '/db.php';
-$currentPage = 'zread';
+$currentPage = 'journal';
 
 $q = isset($_GET['q']) ? trim($_GET['q']) : '';
 
@@ -41,14 +43,14 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php if (empty($rows)): ?>
                 <p class="empty-state">No entries found<?php echo $q !== '' ? ' for that Z-Read number' : ''; ?>.</p>
             <?php else: ?>
-                <table>
+                <div style="overflow-x: auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-top: 14px;">
+                <table style="margin-top: 0; border: none;">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Z-Read No.</th>
                             <th>Store</th>
                             <th>Register</th>
-                            <th>Transaction</th>
                             <th>Date</th>
                             <th></th>
                         </tr>
@@ -60,13 +62,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td><?php echo htmlspecialchars($row['zread_number']); ?></td>
                             <td><?php echo htmlspecialchars($row['store_number']); ?></td>
                             <td><?php echo htmlspecialchars($row['register_number']); ?></td>
-                            <td><?php echo htmlspecialchars($row['transaction_number']); ?></td>
                             <td><?php echo htmlspecialchars($row['entry_date']); ?></td>
-                            <td><a class="btn" href="print.php?id=<?php echo (int)$row['id']; ?>" target="_blank">Reprint</a></td>
+                            <td><a class="btn" href="print.php?id=<?php echo (int)$row['id']; ?>" target="_blank" style="margin-top: 0; padding: 5px 14px; font-size: 12px; border-radius: 16px;">Reprint</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                </div>
             <?php endif; ?>
         </div>
     </main>
