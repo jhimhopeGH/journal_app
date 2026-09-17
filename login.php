@@ -294,7 +294,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
     <div class="login-footer">
-        Copyright 2026 | NCCC | All Rights Reserved
+        Copyright &copy; 2026 NCCC | All Rights Reserved
     </div>
 </div>
 
